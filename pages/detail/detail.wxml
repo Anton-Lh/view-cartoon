@@ -1,0 +1,2 @@
+<!--pages/detai/detail.wxml-->
+<text>{{page}}.wxml</text>

@@ -29,7 +29,7 @@
 </view> -->
 <view class='content'>
   <block wx:for="{{noramalData}}" wx:key="index">
-    <view class='only-box'>
+    <view class='only-box' bindtap="bindViewTap" data-id="{{item}}">
       <image src="{{item.cover_pic}}" mode="aspectFill"></image>
       <text class="cartoon-name">{{item.comic_title}}</text>
       <text class="cartoon-count">共{{item.update_num}}话</text>
