@@ -1,0 +1,5 @@
+<view class="no-login">
+  <image src="../icon/tip.png" style="width:64px;height:64px;"></image>
+  <text class="no-login-font">收藏功能需要登录后才能使用哦</text>
+  <button class="no-login-button">登录</button>
+</view>

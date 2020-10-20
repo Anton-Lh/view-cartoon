@@ -1,0 +1,15 @@
+.top{
+  height: 330rpx;
+  background-color: #FF9933;
+}
+.top-no-login{
+  display: flex;
+  align-items: center;
+  padding-top: 140rpx;
+  padding-left: 50rpx;
+}
+.top-img{
+  width: 46px;
+  height: 42px;
+  border-radius: 8rpx;
+}
