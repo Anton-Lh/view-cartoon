@@ -4,3 +4,11 @@
     <text style="font-size:30rpx;padding-left:25rpx;">请登录</text>
   </view>
 </view>
+<view class="tucao">
+  <image src="../icon/tucao.png" mode="aspectFit"></image>
+  <text>吐槽</text>
+</view>
+<view class="login">
+  <image src="../icon/login.png" mode="aspectFit"></image>
+  <text>登录</text>
+</view>
