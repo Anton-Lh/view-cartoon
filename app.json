@@ -3,6 +3,7 @@
     "pages/home/home",
     "pages/logs/logs",
     "pages/file/file",
+    "pages/detail/detail",
     "pages/my/my"
   ],
   "window": {
