@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/login/login",
+    "pages/register/register",
     "pages/home/home",
     "pages/file/file",
     "pages/my/my",
+    "pages/login/login",
     "pages/logs/logs"
   ],
   "window": {
