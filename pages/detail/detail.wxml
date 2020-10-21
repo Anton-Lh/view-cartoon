@@ -1,4 +1,9 @@
 <view class="detail">
  <view class='detail_banner'>
+  <image src="../icon/tip.png" style="width:64px;height:64px;"></image>
+  <view class='banner_content'>
+    <text class='banner_title'>拉面英雄 <text>11话</text></text>
+    <view class="banner_zank">收藏</view>
+  </view>
  </view>
 </view>
