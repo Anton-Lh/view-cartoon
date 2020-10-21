@@ -1,2 +1,4 @@
-<!--pages/detai/detail.wxml-->
-<text>{{page}}.wxml</text>
+<view class="detail">
+ <view class='detail_banner'>
+ </view>
+</view>
