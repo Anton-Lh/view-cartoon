@@ -1,0 +1,30 @@
+.detail {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 200%;
+}
+.detail_banner {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f54337;
+  height: 250px;
+  width: 100%;
+}
+/* .no-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 350rpx;
+}
+.no-login-font{
+  margin-top: 20rpx;
+}
+.no-login-button{
+  width: 400rpx;
+  margin-top: 40rpx;
+  background-color: #FF9933;
+  border-radius: 50rpx;
+} */
