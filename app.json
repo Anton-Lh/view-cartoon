@@ -3,10 +3,15 @@
     "pages/register/register",
     "pages/home/home",
     "pages/file/file",
+<<<<<<< HEAD
     "pages/my/my",
     "pages/login/login",
     "pages/logs/logs",
     "pages/detail/detail"
+=======
+    "pages/detail/detail",
+    "pages/my/my"
+>>>>>>> 740d33aaf047c38ed3ec96ef3c68a3841359ff22
   ],
   "window": {
     "backgroundTextStyle": "light",

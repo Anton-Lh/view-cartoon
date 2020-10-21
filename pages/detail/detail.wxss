@@ -12,6 +12,7 @@
   background: #f54337;
   height: 250px;
   width: 100%;
+<<<<<<< HEAD
 }
 /* .no-login{
   display: flex;
@@ -28,3 +29,32 @@
   background-color: #FF9933;
   border-radius: 50rpx;
 } */
+=======
+  position: relative;
+}
+.banner_content {
+  position: absolute;
+  height: 75px;
+  bottom: 0;
+  width: 100%;
+  /* background: #ccc; */
+   background: rgb(101, 105, 107); 
+   opacity: 0.8;
+   color: #fff;
+   display: flex;
+   align-items: center;
+}
+.banner_title {
+  width: 550rpx;
+  padding-left:30rpx;
+
+}
+.banner_zank {
+  width:150rpx;
+  color: #fff;
+  background: #f7b500;
+  border-radius: 10%;
+  height: 60rpx;
+  text-align: center; 
+}
+>>>>>>> 740d33aaf047c38ed3ec96ef3c68a3841359ff22
