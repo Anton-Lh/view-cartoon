@@ -16,7 +16,7 @@
       <button class="box-content-button">登录</button>
     </view>
     <view class="box-content">
-      <text class="box-content-register">注册</text>
+      <text class="box-content-register" bindtap="clickRegister">注册</text>
     </view>
   </view>
 </view>

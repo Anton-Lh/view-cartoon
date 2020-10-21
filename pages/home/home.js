@@ -20,7 +20,14 @@ Page({
     leftHight: 0,
     rightHight: 0
   },
-
+  // 跳转详情页
+  bindViewTap: function (row) {
+    const rows = row.currentTarget.dataset.id
+    console.log('sadfsa', rows)
+    wx.navigateTo({
+      url: '../detail/detail'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

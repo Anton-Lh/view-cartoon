@@ -2,19 +2,19 @@
   <view class="box">
     <view class="box-content">
       <view class="box-content-view">
-        <input type="text" placeholder="手机号"/>
+        <input type="text" type="number" bindinput="phoneInput" placeholder="手机号"/>
       </view>
     </view>
     <view class="box-content">
       <view class="box-content-view">
-        <input type="text" placeholder="密码" />
+        <input type="text" placeholder="密码" bindinput="passwordInput" />
       </view>
     </view>
     <view class="box-content">
-      <button class="box-content-button">注册</button>
+      <button class="box-content-button" bindtap="clickRegister">注册</button>
     </view>
     <view class="box-content">
-      <text class="box-content-register">已有账号，马上登录</text>
+      <text class="box-content-register" bindtap="clickLogin">已有账号，马上登录</text>
     </view>
   </view>
 </view>
