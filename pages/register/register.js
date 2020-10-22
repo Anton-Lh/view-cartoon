@@ -1,5 +1,5 @@
 var http = require('../../utils/request'); 
-import { register } from  '../../utils/api';
+import { register,cheackUser } from  '../../utils/api';
 Page({
 
   /**
@@ -7,7 +7,8 @@ Page({
    */
   data: {
     phoneValue: '',
-    passwordValue: ''
+    passwordValue: '',
+    cheackPhone: false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -50,35 +51,10 @@ Page({
       })
       return;
     }
-    
+    //判断手机号是否存在
+    this.phoneValidate();
     //进入注册接口
-    http.post(getAllCartoon,{
-      "user_headimg": "http://cbheaderimg.uvogin.xyz/1557995360693",
-      "user_id": 11,
-      "user_phone": this.data.phoneValue,
-      "user_password": this.data.passwordValue
-      },
-      function(res){
-        //注册成功
-        wx.showToast({
-          title: '注册成功',
-          icon: 'success',
-          duration: 2000,
-          success: function(){
-            wx.redirectTo({
-              url: '../login/login'
-            })
-          }
-        })
-      },
-      function(err){
-        wx.showToast({
-          title: '请求失败',
-          duration: 3000,
-          image:'../icon/fail.png'
-        })
-      }
-    )
+    this.registerRequest();
   },
   clickLogin: function(){
     wx.redirectTo({
@@ -94,5 +70,65 @@ Page({
     this.setData({
       passwordValue: e.detail.value
     })
+  },
+  phoneValidate: function(){
+    var that = this
+    http.post(cheackUser,{
+      "user_id": 11,
+      "user_phone": this.data.phoneValue
+      },
+      function(res){
+        if(!res.message){
+          that.setData({
+            cheackPhone: true
+          })
+        }
+      },
+      function(err){
+        wx.showToast({
+          title: '请求失败',
+          duration: 3000,
+          image:'../icon/fail.png'
+        })
+      }
+    )
+  },
+  registerRequest: function(){
+    if(!this.data.cheackPhone){
+      wx.showToast({
+        title: '号码已存在',
+        duration: 3000,
+        image:'../icon/fail.png'
+      })
+    }else{
+      http.post(register,{
+        "user_headimg": "http://cbheaderimg.uvogin.xyz/1557995360693",
+        "user_id": 11,
+        "user_phone": this.data.phoneValue,
+        "user_password": this.data.passwordValue
+        },
+        function(res){
+          console.log('成功：' + JSON.stringify(res))
+          //注册成功
+          wx.showToast({
+            title: '注册成功',
+            icon: 'success',
+            duration: 2000,
+            success: function(){
+              wx.redirectTo({
+                url: '../login/login'
+              })
+            }
+          })
+        },
+        function(err){
+          wx.showToast({
+            title: '请求失败',
+            duration: 3000,
+            image:'../icon/fail.png'
+          })
+        }
+      )
+    }
   }
 })
