@@ -12,6 +12,8 @@ const register = '/auth/user_CompleteSignup';
 const cartoonDetails = '/comic/getComicDetialByid';
 //获取漫画评论
 const comment = '/comiccomments/getComic_Comments';
+// 添加漫画评论
+const addComment = '/comiccomments/addComic_Comments'
 //获取漫画内容
 const content = '/comicpic/getComicPicByID';
 //获取某人漫画收藏
@@ -28,6 +30,7 @@ module.exports={
   cartoonDetails,
   comment,
   content,
+  addComment,
   collection,
   addTuCao
 }

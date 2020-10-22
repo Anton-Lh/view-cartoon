@@ -34,7 +34,7 @@
       <view style='width:100%;height:14vw'>
         <form bindsubmit="bindFormSubmit">
           <textarea class='form_style' placeholder="请输入内容" name="textarea"/>
-          <button form-type="submit" type='primary' type="primary"> 提交 </button>
+          <button form-type="submit" type='primary'bindtap='subForm' type="primary" > 提交 </button>
            <button form-type="submit" bindtap='chooseShare'> 关闭 </button>
         </form>
       </view>
