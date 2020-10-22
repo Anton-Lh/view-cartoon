@@ -84,7 +84,6 @@ Page({
           comicTitle: res.message.comic_title,
           updateNum: res.message.update_num
         })
-        console.log('成功的参数', res.message)
         
       },
       function (err) {
@@ -107,7 +106,6 @@ Page({
         that.setData({
           commentList: res.message,
         })
-        console.log('成功的参数', res.message)
 
       },
       function (err) {
@@ -124,16 +122,23 @@ Page({
   chooseForm:function(){
     this.setData({ hideShare: true })
   },
-  subForm:function(){
-    var that = this
-    console.log('改变前',that.data.formValue)
-    
-    // http.post(addComment, {
-    //   "cc_info": this.data.formValue.textarea,
-    //   "cc_type": 0,
-    //   "comic_id": 241,
-    //   "user_id": 13669,
-    // },
+  // 表单框内容
+  bindFormSubmit: function (e) {
+    if(e.detail.value.textarea == ""){
+      wx.showToast({
+        title: '请输入',
+        icon: 'none'
+      })
+    }else{
+      this.setData({
+        formValue: e.detail.value.textarea,
+      })
+      // http.post(addComment, {
+      //   "cc_info": this.data.formValue.textarea,
+      //   "cc_type": 0,
+      //   "comic_id": 241,
+      //   "user_id": 13669,
+      // },
       // function (res) {
       //   that.getComment()
       //   that.setData({
@@ -153,13 +158,8 @@ Page({
       //     icon: 'none'
       //   })
       // })
-  },
-  // 表单框内容
-  bindFormSubmit: function (e) {
-    this.setData({
-      formValue: e.detail.value,
-    })
-    console.log('改变后',this.data.formValue)
+    }
+    
   }
   
 })

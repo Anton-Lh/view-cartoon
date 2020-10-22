@@ -7,7 +7,7 @@
  </view>
   <!--漫画集数  -->
   <view class='detail_sort'>
-   <view class='detail_num' wx:for="{{objectArray}}" wx:key="item.comic_id">
+   <view class='detail_num' wx:for="{{objectArray}}" wx:key="index">
    {{item.comic_num}}
    </view>
   </view>
@@ -19,7 +19,7 @@
     <button class='dis_btn' bindtap='chooseForm' >发帖</button>
     </view>
   <!--评论区域  -->
-  <view class='comment' wx:for="{{commentList}}" wx:key="item.author_cc_id">
+  <view class='comment' wx:for="{{commentList}}" wx:key="index">
    <view class='comment_left'>
     <image class="head-img" src="{{item.cc_user_headimg}}"></image>
    </view>
@@ -33,9 +33,9 @@
     <view  wx:if="{{hideShare}}" class='chooseShare'>
       <view style='width:100%;height:14vw'>
         <form bindsubmit="bindFormSubmit">
-          <textarea class='form_style' placeholder="请输入内容" name="textarea"/>
-          <button form-type="submit" type='primary'bindtap='subForm' type="primary" > 提交 </button>
-           <button form-type="submit" bindtap='chooseShare'> 关闭 </button>
+          <textarea class='form_style' value="{{formValue}}" placeholder="请输入内容" name="textarea"/>
+          <button form-type="submit" type='primary' type="primary" > 提交 </button>
+          <button form-type="submit" bindtap='chooseShare'> 关闭 </button>
         </form>
       </view>
   </view>
