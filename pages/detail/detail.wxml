@@ -1,12 +1,43 @@
 <view class="detail">
- <view class='detail_banner'>
-<<<<<<< HEAD
-=======
-  <image src="../icon/tip.png" style="width:64px;height:64px;"></image>
+ <view class='detail_banner' style='background:url({{coverPic}})'>
   <view class='banner_content'>
-    <text class='banner_title'>拉面英雄 <text>11话</text></text>
+    <text class='banner_title'>{{comicTitle}} <text>{{updateNum}}话</text></text>
     <view class="banner_zank">收藏</view>
   </view>
->>>>>>> 740d33aaf047c38ed3ec96ef3c68a3841359ff22
  </view>
+  <!--漫画集数  -->
+  <view class='detail_sort'>
+   <view class='detail_num' wx:for="{{objectArray}}" wx:key="item.comic_id">
+   {{item.comic_num}}
+   </view>
+  </view>
+  <!--讨论区  -->
+  <view class='discussion'>
+  <!--发帖区  -->
+    <view class='discussion_top'>
+    <text class='dis_title'>#{{comicTitle}}</text>
+    <button class='dis_btn' bindtap='chooseForm' >发帖</button>
+    </view>
+  <!--评论区域  -->
+  <view class='comment' wx:for="{{commentList}}" wx:key="item.author_cc_id">
+   <view class='comment_left'>
+    <image class="head-img" src="{{item.cc_user_headimg}}"></image>
+   </view>
+   <view class='comment_right'>
+    <text class='right_title'>{{item.cc_user_nickname}}</text>
+    <text class='right_date'>{{item.comments_date}}</text>
+    <text class='right_langer'>{{item.cc_info}}</text>
+   </view>
+  </view>
+  <!--文本框  -->
+    <view  wx:if="{{hideShare}}" class='chooseShare'>
+      <view style='width:100%;height:14vw'>
+        <form bindsubmit="bindFormSubmit">
+          <textarea class='form_style' placeholder="请输入内容" name="textarea"/>
+          <button form-type="submit" type='primary' type="primary"> 提交 </button>
+           <button form-type="submit" bindtap='chooseShare'> 关闭 </button>
+        </form>
+      </view>
+  </view>
+  </view>
 </view>
