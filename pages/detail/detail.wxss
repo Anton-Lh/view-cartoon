@@ -138,7 +138,7 @@
 .right_date{
   font-size: 20rpx;
   display: block;
-  color: #c8c8c8l;
+  color: #c8c8c8;
 }
 .right_langer {
  margin-top: 40rpx;
