@@ -1,6 +1,6 @@
 // pages/detai/detail.js
 var http = require('../../utils/request');
-import { cartoonDetails, comment } from '../../utils/api'
+import { cartoonDetails, comment, addComment } from '../../utils/api'
 Page({
   data: {
     objectArray: [],
@@ -12,22 +12,6 @@ Page({
     height: 20,
     hideShare: false,
     formValue:''
-  },
-  // 关闭遮罩
-  chooseShare: function () {
-    this.setData({ hideShare: false })
-  },
-  chooseForm:function(){
-    this.setData({ hideShare: true })
-  },
-  // 表单框内容
-
-  bindFormSubmit: function (e) {
-    this.setData({
-      formValue: e.detail.value,
-      hideShare: false
-    })
-    console.log(this.data.formValue)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -132,5 +116,50 @@ Page({
           icon: 'none'
         })
       })
+  },
+  // 关闭遮罩
+  chooseShare: function () {
+    this.setData({ hideShare: false })
+  },
+  chooseForm:function(){
+    this.setData({ hideShare: true })
+  },
+  subForm:function(){
+    var that = this
+    console.log('改变前',that.data.formValue)
+    
+    // http.post(addComment, {
+    //   "cc_info": this.data.formValue.textarea,
+    //   "cc_type": 0,
+    //   "comic_id": 241,
+    //   "user_id": 13669,
+    // },
+      // function (res) {
+      //   that.getComment()
+      //   that.setData({
+      //     hideShare: false,
+      //   })
+      //   wx.showToast({
+      //     title: '成功',
+      //     icon: 'success',
+      //     duration: 2000
+      //   })
+                
+      //   console.log('成功的参数', res.message)
+      // },
+      // function (err) {
+      //   wx.showToast({
+      //     title: '请求失败',
+      //     icon: 'none'
+      //   })
+      // })
+  },
+  // 表单框内容
+  bindFormSubmit: function (e) {
+    this.setData({
+      formValue: e.detail.value,
+    })
+    console.log('改变后',this.data.formValue)
   }
+  
 })
