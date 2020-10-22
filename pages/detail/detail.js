@@ -1,25 +1,41 @@
 // pages/detai/detail.js
+var http = require('../../utils/request');
+import { cartoonDetails, comment } from '../../utils/api'
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    objectArray: [
-      { id: 0, unique: '0' },
-      { id: 1, unique: '1' },
-      { id: 2, unique: '2' },
-      { id: 3, unique: '3' },
-      { id: 4, unique: '4' },
-      { id: 5, unique: '5' },
-    ],
+    objectArray: [],
+    commentList:[],
+    coverPic:'',
+    comicTitle:'',
+    updateNum:'',
+    //  文本框
+    height: 20,
+    hideShare: false,
+    formValue:''
   },
+  // 关闭遮罩
+  chooseShare: function () {
+    this.setData({ hideShare: false })
+  },
+  chooseForm:function(){
+    this.setData({ hideShare: true })
+  },
+  // 表单框内容
 
+  bindFormSubmit: function (e) {
+    this.setData({
+      formValue: e.detail.value,
+      hideShare: false
+    })
+    console.log(this.data.formValue)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
+    this.getDetails()
+    this.getComment()
   },
 
   /**
@@ -69,5 +85,52 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  // 获取详情页数据
+  getDetails: function () {
+    var that = this
+    http.post(cartoonDetails, {
+      "comic_id": 241,
+      "user_id":13669,
+    },
+      function (res) {
+        that.setData({
+          objectArray: res.message.comicDetialsList,
+          coverPic: res.message.cover_pic,
+          comicTitle: res.message.comic_title,
+          updateNum: res.message.update_num
+        })
+        console.log('成功的参数', res.message)
+        
+      },
+      function (err) {
+        wx.showToast({
+          title: '请求失败',
+          icon: 'none'
+        })
+      })
+  },
+  // 获取评论
+  getComment:function(){
+    var that = this
+    http.post(comment, {
+      "comic_id": 241,
+      "pageNum":1,
+      "pageSize":'100',
+      "user_id": 13669,
+    },
+      function (res) {
+        that.setData({
+          commentList: res.message,
+        })
+        console.log('成功的参数', res.message)
+
+      },
+      function (err) {
+        wx.showToast({
+          title: '请求失败',
+          icon: 'none'
+        })
+      })
   }
 })
