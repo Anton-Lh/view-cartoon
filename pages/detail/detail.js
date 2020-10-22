@@ -5,7 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    objectArray: [
+      { id: 0, unique: '0' },
+      { id: 1, unique: '1' },
+      { id: 2, unique: '2' },
+      { id: 3, unique: '3' },
+      { id: 4, unique: '4' },
+      { id: 5, unique: '5' },
+    ],
   },
 
   /**

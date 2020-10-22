@@ -1,15 +1,12 @@
 .detail {
-   display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
-  width: 200%;
+  background: #f0f0f0;
 }
 .detail_banner {
    display: flex;
   align-items: center;
   justify-content: center;
-  background: #f54337;
+  background: #c4baa8;
   height: 250px;
   width: 100%;
   position: relative;
@@ -29,7 +26,12 @@
 .banner_title {
   width: 550rpx;
   padding-left:30rpx;
-
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2; /*设置超出两行进行隐藏*/
 }
 .banner_zank {
   width:150rpx;
@@ -38,4 +40,27 @@
   border-radius: 10%;
   height: 60rpx;
   text-align: center; 
+}
+.detail_sort {
+  min-height: 270rpx;
+  width: 100%;
+  padding: 30rpx 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.detail_num {
+  width: 70px;
+  height: 50rpx;
+  display: inline-block;
+  border: 1px solid #f5f5f5;
+  background: #fff;
+  color: #333;
+  margin-right: 40rpx;
+  margin-bottom: 20rpx;
+  border-radius: 5rpx;
+  text-align: center;
+}
+/*讨论区  */
+.discussion {
+  background: #fff;
 }

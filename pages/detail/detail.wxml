@@ -6,4 +6,17 @@
     <view class="banner_zank">收藏</view>
   </view>
  </view>
+  <!--漫画集数  -->
+  <view class='detail_sort'>
+   <view class='detail_num' wx:for="{{objectArray}}" wx:key="item.id">
+   {{item.unique}}
+   </view>
+  </view>
+  <!--讨论区  -->
+  <view class='discussion'>
+    <view class='discussion_top'>
+    <text>捡到一只小狼狗</text>
+    <button>发帖</button>
+    </view>
+  </view>
 </view>
