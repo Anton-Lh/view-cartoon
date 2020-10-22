@@ -1,0 +1,22 @@
+<view class="main">
+  <view class="box">
+    <text class="box-title">大虎漫画</text>
+    <image class="box-image" src="../icon/timg.jpg"></image>
+    <view class="box-content">
+      <view class="box-content-view">
+        <input type="text" placeholder="手机号"/>
+      </view>
+    </view>
+    <view class="box-content">
+      <view class="box-content-view">
+        <input type="text" placeholder="账号" />
+      </view>
+    </view>
+    <view class="box-content">
+      <button class="box-content-button">登录</button>
+    </view>
+    <view class="box-content">
+      <text class="box-content-register" bindtap="clickRegister">注册</text>
+    </view>
+  </view>
+</view>

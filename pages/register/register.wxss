@@ -1,0 +1,56 @@
+page{
+  background-color: #f5f5f5;
+}
+.main{
+  width: 100%;
+}
+.box{
+  width: 90%;
+  height: 800rpx;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 160rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box-content{
+  width: 100%;
+  height: 90rpx;
+  margin-top: 65rpx;
+  display: flex;
+  justify-content: center;
+}
+.box-content-view{
+  width: 85%;
+  height: 100%;
+  border-bottom: 1px solid #dcdcdc;
+}
+.box-phone-view>input{
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+}
+.box-content-button{
+  height: 100%;
+  width: 300rpx;
+  color: white;
+  margin-top: 35rpx;
+  background-color: #2E2E2E;
+}
+.box-content-register{
+  height: 100%;
+  font-size: 28rpx;
+  color: #bdbdbd;
+}
+/* 底下提示 */
+.tip-view{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20rpx;
+  font-size: 28rpx;
+}
+
+

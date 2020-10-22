@@ -13,3 +13,31 @@
   height: 42px;
   border-radius: 8rpx;
 }
+.tucao{
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+}
+.tucao>image{
+  height: 70rpx;
+  width: 70rpx;
+  padding-left: 20rpx;
+}
+.tucao>text{
+  font-size: 28rpx;
+  padding-left: 20rpx;
+}
+.login{
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+}
+.login>image{
+  height: 70rpx;
+  width: 70rpx;
+  padding-left: 20rpx;
+}
+.login>text{
+  font-size: 28rpx;
+  padding-left: 20rpx;
+}

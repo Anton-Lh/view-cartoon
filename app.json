@@ -1,10 +1,12 @@
 {
   "pages": [
+    "pages/register/register",
     "pages/home/home",
-    "pages/logs/logs",
     "pages/file/file",
-    "pages/detail/detail",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/login/login",
+    "pages/logs/logs",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
