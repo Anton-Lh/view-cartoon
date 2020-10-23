@@ -108,7 +108,6 @@ Page({
         "user_password": this.data.passwordValue
         },
         function(res){
-          console.log('成功：' + JSON.stringify(res))
           //注册成功
           wx.showToast({
             title: '注册成功',

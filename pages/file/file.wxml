@@ -1,5 +1,12 @@
-<view class="no-login">
-  <image src="../icon/tip.png" style="width:64px;height:64px;"></image>
+<view class="no-login" style="display:{{noLoginDisply}}">
+  <image class="no-login-image" src="../icon/tip.png"></image>
   <text class="no-login-font">收藏功能需要登录后才能使用哦</text>
-  <button class="no-login-button">登录</button>
+  <button class="no-login-button" bindtap="clickLogin">登录</button>
+</view>
+<view class="main" style="width:{{mainWidth}}px;padding-left:{{mainPadding}}px;padding-right:{{mainPadding}}px;">
+  <view class="main-box" style="width:{{mainBoxWidth}}px">
+    <image class="main-box-image" src="../icon/fail.png"></image>
+    <text class="main-box-text">共8话</text>
+  </view>
+
 </view>
