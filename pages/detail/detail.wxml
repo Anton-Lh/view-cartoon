@@ -7,7 +7,12 @@
  </view>
   <!--漫画集数  -->
   <view class='detail_sort'>
-   <view class='detail_num' wx:for="{{objectArray}}" wx:key="index">
+   <view class='detail_num' 
+   wx:for="{{objectArray}}" 
+   wx:key="index"
+   bindtap="bindViewNum" 
+   data-id="{{item}}"
+   >
    {{item.comic_num}}
    </view>
   </view>
@@ -35,8 +40,8 @@
         <form bindsubmit="bindFormSubmit">
           <textarea class='form_style' value="{{formValue}}" placeholder="请输入内容" name="textarea"/>
           <button form-type="submit" type='primary' type="primary" > 提交 </button>
-          <button form-type="submit" bindtap='chooseShare'> 关闭 </button>
         </form>
+          <button form-type="submit" bindtap='chooseShare'> 关闭 </button>
       </view>
   </view>
   </view>

@@ -1,0 +1,6 @@
+<!--pages/cartoondeatil/detail.wxml-->
+<view class='img_content'  wx:for="{{cartoonList}}" wx:key="index">
+<image class='img_style' src="{{item.picture_url}}"
+bindtouchstart='touchStartHandle' bindtouchmove='touchMoveHandle' bindload='load' style="width: {{ touch.scaleWidth }}px;height: {{ touch.scaleHeight }}px"
+></image>
+</view>

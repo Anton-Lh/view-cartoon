@@ -10,8 +10,7 @@ Page({
     updateNum:'',
     //  文本框
     height: 20,
-    hideShare: false,
-    formValue:''
+    hideShare: false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -122,42 +121,46 @@ Page({
   chooseForm:function(){
     this.setData({ hideShare: true })
   },
+  // 跳转对应集数
+  bindViewNum:function(row){
+    console.log(row.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../cartoondeatil/cartoondeatil'
+    })
+  },
   // 表单框内容
   bindFormSubmit: function (e) {
+    var that = this
     if(e.detail.value.textarea == ""){
       wx.showToast({
         title: '请输入',
         icon: 'none'
       })
     }else{
-      this.setData({
-        formValue: e.detail.value.textarea,
+      console.info('sadasd',e.detail.value.textarea)
+      http.post(addComment, {
+        "cc_info": e.detail.value.textarea,
+        "cc_type": 0,
+        "comic_id": 241,
+        "user_id": 13669,
+      },
+      function (res) {
+        that.setData({
+          hideShare: false,
+        })
+        wx.showToast({
+          title: '评论成功',
+          icon: 'success',
+          duration: 2000
+        })
+        that.getComment()
+      },
+      function (err) {
+        wx.showToast({
+          title: '请求失败',
+          icon: 'none'
+        })
       })
-      // http.post(addComment, {
-      //   "cc_info": this.data.formValue.textarea,
-      //   "cc_type": 0,
-      //   "comic_id": 241,
-      //   "user_id": 13669,
-      // },
-      // function (res) {
-      //   that.getComment()
-      //   that.setData({
-      //     hideShare: false,
-      //   })
-      //   wx.showToast({
-      //     title: '成功',
-      //     icon: 'success',
-      //     duration: 2000
-      //   })
-                
-      //   console.log('成功的参数', res.message)
-      // },
-      // function (err) {
-      //   wx.showToast({
-      //     title: '请求失败',
-      //     icon: 'none'
-      //   })
-      // })
     }
     
   }

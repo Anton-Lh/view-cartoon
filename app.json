@@ -6,7 +6,8 @@
     "pages/my/my",
     "pages/login/login",
     "pages/logs/logs",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/cartoondeatil/cartoondeatil"
   ],
   "window": {
     "backgroundTextStyle": "light",
