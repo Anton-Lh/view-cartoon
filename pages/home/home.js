@@ -134,5 +134,10 @@ Page({
           icon: 'none'
         })
       })
+  },
+  entrySearch: function(){
+    wx.navigateTo({
+      url: '../search/search'
+    })
   }
 })
