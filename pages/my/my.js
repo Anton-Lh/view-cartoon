@@ -1,11 +1,16 @@
 ﻿// pages/my/my.js
+var app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-   
+    nickname: '请登录',
+    fontStatus: '登录',
+    headImg: '../icon/timg.jpg',
+    status: false
   },
 
   /**
@@ -19,7 +24,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var that = this;
+    if(app.globalData.userInfo != null){
+      that.setData({
+        nickname: app.globalData.userInfo.user_phone,
+        fontStatus: '退出',
+        headImg: app.globalData.userInfo.user_headimg,
+        status: true
+      })
+    }
   },
 
   /**
@@ -62,5 +75,32 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  clickStatus: function(){
+    if(!this.data.status){
+      wx.redirectTo({
+        url: '../login/login'
+      })
+    }else{
+      app.globalData.userInfo == null;
+      wx.reLaunch({
+        url: '../home/home'
+      })
+    }
+  },
+  clickTucao: function(){
+    if(app.globalData.userInfo == null){
+      wx.showToast({
+        title: '吐槽前请登录！',
+        icon: 'none',
+        duration: 1500
+      });
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }else{
+      //进入吐槽界面
+
+    }
   }
 })

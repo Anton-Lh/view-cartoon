@@ -1,3 +1,4 @@
+var app = getApp();
 var http = require('../../utils/request'); 
 import { banner,getAllCartoon } from  '../../utils/api'
 Page({
@@ -6,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    headImg: '../icon/timg.jpg',
     backgroundImg:[],
     indicatorDots: true,
     autoplay: true,
@@ -58,14 +60,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if(app.globalData.userInfo != null){
+      that.setData({
+        headImg: app.globalData.userInfo.user_headimg
+      })
+    }
   },
 
   /**

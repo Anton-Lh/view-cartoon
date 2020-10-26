@@ -1,5 +1,5 @@
 <view class="search-top">
-  <image class="head-img" src="../icon/timg.jpg"></image>
+  <image class="head-img" src="{{headImg}}"></image>
   <view class="search-right">
     <view class="search-box">
       <input class="search-box-input" placeholder='你想看什么漫画，搜搜看'></input>

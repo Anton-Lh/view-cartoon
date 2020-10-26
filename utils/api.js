@@ -20,6 +20,8 @@ const content = '/comicpic/getComicPicByID';
 const collection = '/comicCol/getComicColByUserid';
 //添加吐槽
 const addTuCao = '/tucao/addTucao';
+//搜素漫画
+const search = '/search/getComicBySearch';
 
 module.exports={
   login,
@@ -32,5 +34,6 @@ module.exports={
   content,
   addComment,
   collection,
-  addTuCao
+  addTuCao,
+  search
 }

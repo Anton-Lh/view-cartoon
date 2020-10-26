@@ -1,0 +1,8 @@
+<!--pages/search/search.wxml-->
+<view >
+  <view class="search">
+    <input type="text" />
+    <view>取消</view>
+  </view>
+  
+</view>

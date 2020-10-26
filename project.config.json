@@ -1,79 +1,79 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"scopeDataCheck": false,
-		"coverView": true,
-		"es6": true,
-		"postcss": true,
-		"compileHotReLoad": false,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"autoAudits": false,
-		"newFeature": true,
-		"uglifyFileName": false,
-		"uploadWithSourceMap": true,
-		"useIsolateContext": true,
-		"nodeModules": false,
-		"enhance": false,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"showShadowRootInWxmlPanel": true,
-		"checkInvalidKey": true,
-		"checkSiteMap": false,
-		"useMultiFrameRuntime": false,
-		"useApiHook": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"packNpmManually": false,
-		"packNpmRelationList": [],
-		"minifyWXSS": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.6.5",
-	"appid": "wx5c9e4352b6ad797a",
-	"projectname": "cartoon",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"list": []
-		},
-		"conversation": {
-			"list": []
-		},
-		"plugin": {
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"list": [
-				{
-					"id": -1,
-					"name": "detail",
-					"pathName": "pages/detail/detail",
-					"query": ""
-				},
-				{
-					"id": 1,
-					"name": "漫画详情",
-					"pathName": "pages/cartoondeatil/cartoondeatil",
-					"query": ""
-				}
-			]
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "scopeDataCheck": false,
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "compileHotReLoad": false,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "autoAudits": false,
+    "newFeature": true,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "useIsolateContext": true,
+    "nodeModules": false,
+    "enhance": false,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "showShadowRootInWxmlPanel": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.6.5",
+  "appid": "wx5c9e4352b6ad797a",
+  "projectname": "cartoon",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "detail",
+          "pathName": "pages/detail/detail",
+          "query": ""
+        },
+        {
+          "id": 1,
+          "name": "漫画详情",
+          "pathName": "pages/cartoondeatil/cartoondeatil",
+          "query": ""
+        }
+      ]
+    }
+  }
 }
