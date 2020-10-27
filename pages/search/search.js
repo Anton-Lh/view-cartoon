@@ -1,6 +1,6 @@
 var app = getApp();
 var http = require('../../utils/request'); 
-import { collection } from  '../../utils/api';
+import { search } from  '../../utils/api';
 Page({
 
   /**
@@ -11,9 +11,8 @@ Page({
     mainBoxWidth: 0, //dom的高度
     marginLF: 0, 
     mainPadding: 0, //dom的padding
-    moreDisplay: 'block',
     dataArr: [],
-    pageNum: 1, //页数
+    searchValue: ''
   },
 
   /**
@@ -44,7 +43,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getCollection();
+    this.getSearch();
   },
 
   /**
@@ -88,37 +87,21 @@ Page({
   onShareAppMessage: function () {
 
   },
-  getCollection: function(){
+  getSearch: function(value){
     var that = this;
-    http.post(collection,{
-      "pageNum": that.data.pageNum,
-      "pageSize": 10,
-      "user_id": app.globalData.userInfo.user_id
+    http.post(search,{
+      "search_info": value, //搜索内容
+      "user_id": "11"
       },
       function(res){
+        console.log(res)
         if(res.message.length != 0){
-          if(that.data.pageNum == 1){
-            that.setData({
-              dataArr: res.message
-            })
-          }else{
-            var dataArr = that.data.dataArr;
-            var arr2 = res.message;
-            dataArr = dataArr.concat(arr2);
-            that.setData({
-              dataArr: dataArr
-            })
-          }
-        }else{
           that.setData({
-            moreDisplay: 'none'
+            dataArr: res.message
           })
-          wx.showToast({
-            title: '没有更多收藏啦~~',
-            icon: 'none',
-            duration: 3000
-          })
+          
         }
+        
       },
       function(err){
         wx.showToast({
@@ -128,5 +111,13 @@ Page({
         })
       }
     )
+  },
+  clickSearch: function(){
+    this.getSearch(this.data.searchValue)
+  },
+  searchInput: function(e){
+    this.setData({
+      searchValue: e.detail.value
+    })
   },
 })
