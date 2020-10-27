@@ -6,6 +6,7 @@ Page({
     objectArray: [],
     commentList:[],
     coverPic:'',
+    comic_id: '',
     comicTitle:'',
     updateNum:'',
     //  文本框
@@ -16,7 +17,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      comic_id: options.comic_id
+    })
     this.getDetails()
     this.getComment()
   },
@@ -73,8 +76,8 @@ Page({
   getDetails: function () {
     var that = this
     http.post(cartoonDetails, {
-      "comic_id": 241,
-      "user_id":13669,
+      "comic_id": that.data.comic_id,
+      "user_id": 11,
     },
       function (res) {
         that.setData({
@@ -96,10 +99,10 @@ Page({
   getComment:function(){
     var that = this
     http.post(comment, {
-      "comic_id": 241,
+      "comic_id": that.data.comic_id,
       "pageNum":1,
       "pageSize":'100',
-      "user_id": 13669,
+      "user_id": 11,
     },
       function (res) {
         that.setData({

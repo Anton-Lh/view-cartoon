@@ -20,13 +20,6 @@
   </view>
 </view>
 
-<!-- <view class='content'>
-  <view class='left'>
-    <block wx:for="{{leftList}}" wx:key="index">
-      <image class='pic' style='height:{{item.CoverHeight}}' src='{{item.Cover}}'></image>
-    </block>
-  </view>
-</view> -->
 <view class='content'>
   <block wx:for="{{noramalData}}" wx:key="index">
     <view class='only-box' bindtap="bindViewTap" data-id="{{item}}">

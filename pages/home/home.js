@@ -25,9 +25,8 @@ Page({
   // 跳转详情页
   bindViewTap: function (row) {
     const rows = row.currentTarget.dataset.id
-    console.log('sadfsa', rows)
     wx.navigateTo({
-      url: '../detail/detail'
+      url: '../detail/detail?comic_id=' + rows.comic_id
     })
   },
   /**
