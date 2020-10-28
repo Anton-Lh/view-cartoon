@@ -12,12 +12,21 @@ Page({
     updateNum:'',
     //  文本框
     height: 20,
-    hideShare: false
+    hideShare: false,
+    user_id: "11",
+    isComicCol: false,
+    shoucang: '收藏'
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if(app.globalData.userInfo != null){
+      var uid = app.globalData.userInfo.user_id;
+      this.setData({
+        user_id: uid
+      })
+    }
     this.setData({
       comic_id: options.comic_id
     })
@@ -75,18 +84,25 @@ Page({
   },
   // 获取详情页数据
   getDetails: function () {
-    var that = this
+    var that = this;
     http.post(cartoonDetails, {
       "comic_id": that.data.comic_id,
-      "user_id": 11,
+      "user_id": that.data.user_id,
     },
       function (res) {
+        console.log(res.message)
         that.setData({
           objectArray: res.message.comicDetialsList,
           coverPic: res.message.cover_pic,
           comicTitle: res.message.comic_title,
           updateNum: res.message.update_num
         })
+        if(that.data.user_id != 11 && res.message.is_ComicCol){
+          that.setData({
+            isComicCol: res.message.is_ComicCol,
+            shoucang: '已收藏'
+          })
+        }
         
       },
       function (err) {
@@ -103,7 +119,7 @@ Page({
       "comic_id": that.data.comic_id,
       "pageNum":1,
       "pageSize":'100',
-      "user_id": 11,
+      "user_id": that.data.user_id,
     },
       function (res) {
         that.setData({
@@ -123,6 +139,17 @@ Page({
     this.setData({ hideShare: false })
   },
   chooseForm:function(){
+    if(app.globalData.userInfo == null){
+      wx.showToast({
+        title: '发帖前请登录！',
+        icon: 'none',
+        duration: 1500
+      });
+      wx.navigateTo({
+        url: '../login/login'
+      })
+      return;
+    }
     this.setData({ hideShare: true })
   },
   // 跳转对应集数
@@ -149,8 +176,8 @@ Page({
       http.post(addComment, {
         "cc_info": e.detail.value.textarea,
         "cc_type": 0,
-        "comic_id": 241,
-        "user_id": 13669,
+        "comic_id": that.data.comic_id,
+        "user_id": that.data.user_id,
       },
       function (res) {
         that.setData({

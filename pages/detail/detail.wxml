@@ -2,7 +2,7 @@
  <view class='detail_banner' style='background:url({{coverPic}})'>
   <view class='banner_content'>
     <text class='banner_title'>{{comicTitle}} <text>{{updateNum}}话</text></text>
-    <view class="banner_zank">收藏</view>
+    <view class="{{isComicCol == true ? 'banner_zank_false' : 'banner_zank'}}">{{shoucang}}</view>
   </view>
  </view>
   <!--漫画集数  -->
