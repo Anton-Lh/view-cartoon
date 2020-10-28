@@ -39,7 +39,7 @@ Page({
         function(res){
           var image = [];
           for(var i=0;i<res.message.length;i++){
-            image.push(res.message[i].banner_pic)
+            image.push(res.message[i])
           }
           that.setData({
             backgroundImg:image
@@ -59,19 +59,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     var that = this;
     if(app.globalData.userInfo != null){
       that.setData({
         headImg: app.globalData.userInfo.user_headimg
       })
     }
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    
   },
 
   /**
@@ -137,6 +137,11 @@ Page({
   entrySearch: function(){
     wx.navigateTo({
       url: '../search/search'
+    })
+  },
+  clickSwiper: function(e){
+    wx.navigateTo({
+      url: '../detail/detail?comic_id=' + e.currentTarget.dataset.id
     })
   }
 })

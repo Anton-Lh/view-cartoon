@@ -81,7 +81,7 @@ Page({
     this.loadingMore()
   },
   clickLogin: function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../login/login'
     })
   },

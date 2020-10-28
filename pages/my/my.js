@@ -78,7 +78,7 @@ Page({
   },
   clickStatus: function(){
     if(!this.data.status){
-      wx.redirectTo({
+      wx.navigateTo({
         url: '../login/login'
       })
     }else{

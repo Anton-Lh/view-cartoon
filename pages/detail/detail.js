@@ -1,4 +1,5 @@
 // pages/detai/detail.js
+var app = getApp();
 var http = require('../../utils/request');
 import { cartoonDetails, comment, addComment } from '../../utils/api'
 Page({
@@ -126,10 +127,14 @@ Page({
   },
   // 跳转对应集数
   bindViewNum:function(row){
-    console.log(row.currentTarget.dataset.id)
     wx.navigateTo({
       url: '../cartoondeatil/cartoondeatil'
     })
+  },
+  clickZank: function(){
+    if(app.globalData.userInfo != null){
+      
+    }
   },
   // 表单框内容
   bindFormSubmit: function (e) {

@@ -8,8 +8,8 @@ page{
   margin-top: 350rpx;
 }
 .no-login-image{
-  width:64px;
-  height:64px;
+  width:50px;
+  height:50px;
 }
 .no-login-font{
   margin-top: 20rpx;

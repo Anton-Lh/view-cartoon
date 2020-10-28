@@ -11,9 +11,9 @@
   <view class="banner-box">
     <swiper class="swiper-box" indicator-dots="{{indicatorDots}}"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block class="swiper-block" wx:for="{{backgroundImg}}" wx:key="*this">
-          <swiper-item  class="slide-image" >
-            <image src="{{item}}" mode="aspectFill" />
+      <block class="swiper-block" wx:for="{{backgroundImg}}" wx:key="index">
+          <swiper-item data-id="{{item.banner_id}}" class="slide-image"  bindtap="clickSwiper">
+            <image src="{{item.banner_pic}}" mode="aspectFill" />
           </swiper-item>
         </block>
     </swiper> 
