@@ -1,6 +1,7 @@
 ﻿// pages/my/my.js
 var app = getApp();
-
+var http = require('../../utils/request');
+import { addTuCao } from '../../utils/api'
 Page({
 
   /**
@@ -10,7 +11,8 @@ Page({
     nickname: '请登录',
     fontStatus: '登录',
     headImg: '../icon/timg.jpg',
-    status: false
+    status: false,
+    hideShare: false,
   },
 
   /**
@@ -30,7 +32,8 @@ Page({
         nickname: app.globalData.userInfo.user_phone,
         fontStatus: '退出',
         headImg: app.globalData.userInfo.user_headimg,
-        status: true
+        status: true,
+        user_id: app.globalData.userInfo.user_id
       })
     }
   },
@@ -100,7 +103,58 @@ Page({
       })
     }else{
       //进入吐槽界面
-
+      this.setData({ hideShare: true })
+      console.info('吐槽兄弟团')
     }
-  }
+  },
+  // 关闭遮罩
+  chooseShare: function () {
+    this.setData({ hideShare: false })
+  },
+     // 表单框内容
+  bindFormSubmit: function (e) {
+    var that = this
+    if(e.detail.value.textarea == ""){
+      wx.showToast({
+        title: '请输入',
+        icon: 'none'
+      })
+    }else{
+      console.info('sadasd',e.detail.value.textarea)
+      http.post(addTuCao, {
+        "tucao_info": e.detail.value.textarea,
+        "user_id": that.data.user_id,
+      },
+      function (res) {
+        that.setData({
+          hideShare: false,
+        })
+        wx.showToast({
+          title: '吐槽成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      function (err) {
+        wx.showToast({
+          title: '请求失败',
+          icon: 'none'
+        })
+      })
+    }
+  },
+    chooseForm:function(){
+      if(app.globalData.userInfo == null){
+        wx.showToast({
+          title: '吐槽前请登录！',
+          icon: 'none',
+          duration: 1500
+        });
+        wx.navigateTo({
+          url: '../login/login'
+        })
+        return;
+      }
+      this.setData({ hideShare: true })
+    },
 })

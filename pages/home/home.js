@@ -20,7 +20,9 @@ Page({
     leftList: [],
     rightList: [],
     leftHight: 0,
-    rightHight: 0
+    rightHight: 0,
+    beforeColor: "white",
+    afterColor: "coral"
   },
   // 跳转详情页
   bindViewTap: function (row) {

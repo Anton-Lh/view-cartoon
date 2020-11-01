@@ -2,7 +2,8 @@
  <view class='detail_banner' style='background:url({{coverPic}})'>
   <view class='banner_content'>
     <text class='banner_title'>{{comicTitle}} <text>{{updateNum}}话</text></text>
-    <view class="{{isComicCol == true ? 'banner_zank_false' : 'banner_zank'}}">{{shoucang}}</view>
+    <view class="{{isComicCol == true ? 'banner_zank_false' : 'banner_zank'}}">
+      {{isComicCol?'已收藏':'收藏'}}</view>
   </view>
  </view>
   <!--漫画集数  -->
@@ -39,7 +40,7 @@
       <view style='width:100%;height:14vw'>
         <form bindsubmit="bindFormSubmit">
           <textarea class='form_style' value="{{formValue}}" placeholder="请输入内容" name="textarea"/>
-          <button form-type="submit" type='primary' type="primary" > 提交 </button>
+          <button form-type="submit" class="sun_content"> 提交 </button>
         </form>
           <button form-type="submit" bindtap='chooseShare'> 关闭 </button>
       </view>

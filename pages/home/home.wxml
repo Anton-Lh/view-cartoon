@@ -10,6 +10,7 @@
 <view class="banner">
   <view class="banner-box">
     <swiper class="swiper-box" indicator-dots="{{indicatorDots}}"
+    indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block class="swiper-block" wx:for="{{backgroundImg}}" wx:key="index">
           <swiper-item data-id="{{item.banner_id}}" class="slide-image"  bindtap="clickSwiper">

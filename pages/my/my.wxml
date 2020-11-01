@@ -12,3 +12,13 @@
   <image src="../icon/login.png" mode="aspectFit"></image>
   <text>{{fontStatus}}</text>
 </view>
+  <!--文本框  -->
+  <view  wx:if="{{hideShare}}" class='chooseShare'>
+      <view style='width:100%;height:14vw'>
+        <form bindsubmit="bindFormSubmit">
+          <textarea class='form_style' value="{{formValue}}" placeholder="请说说你想吐槽啥.." name="textarea"/>
+          <button form-type="submit" class="sun_content"> 提交 </button>
+        </form>
+          <button form-type="submit" bindtap='chooseShare'> 关闭 </button>
+      </view>
+  </view>

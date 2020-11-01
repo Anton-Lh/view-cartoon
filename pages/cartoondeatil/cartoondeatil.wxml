@@ -1,6 +1,8 @@
 <!--pages/cartoondeatil/detail.wxml-->
-<view class='img_content'  wx:for="{{cartoonList}}" wx:key="index">
+<view class='img_content'  wx:for="{{cartoonList}}" wx:key="index" >
+  <!-- <image class='img_style' src="{{item.picture_url}}"
+bindtouchstart='touchStartHandle' bindtouchmove='touchMoveHandle' bindload='load' mode="widthFix" style="width: {{ touch.picture_w }}px;height: {{ touch.scaleHeight }}px"></image> -->
 <image class='img_style' src="{{item.picture_url}}"
-bindtouchstart='touchStartHandle' bindtouchmove='touchMoveHandle' bindload='load' style="width: {{ touch.scaleWidth }}px;height: {{ touch.scaleHeight }}px"
+bindtouchstart='touchStartHandle' bindtouchmove='touchMoveHandle' bindload='load' mode="widthFix" style="width: {{ item.picture_w }}px;height: {{ item.picture_h }}px"
 ></image>
 </view>

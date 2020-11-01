@@ -46,7 +46,8 @@ page{
   width: 95%;
   border-radius: 30rpx;
   transform: translateY(0);
-  overflow:hidden
+  overflow:hidden;
+  margin-bottom: 30rpx;
 }
 .swiper-box{
   width: 100%;
@@ -91,6 +92,25 @@ page{
   padding-left: 15rpx;
   margin-bottom: 20rpx;
 }
-
-
+.dots{ 
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  bottom: 20rpx; 
+  display: flex; 
+  justify-content: center; 
+} 
+.dots .dot{ 
+  margin: 0 8rpx; 
+  width: 14rpx; 
+  height: 14rpx; 
+  background: #fff; 
+  border-radius: 8rpx; 
+  transition: all .6s; 
+} 
+.dots .dot.active{ 
+  width: 24rpx; 
+  background: #f80; 
+}
+ 
 

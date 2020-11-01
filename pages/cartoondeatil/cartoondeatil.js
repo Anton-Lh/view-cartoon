@@ -1,4 +1,5 @@
 // pages/cartoondeatil/detail.js
+var app = getApp();
 var http = require('../../utils/request');
 import { content } from '../../utils/api'
 Page({
@@ -14,7 +15,9 @@ Page({
       baseWidth: null,
       baseHeight: null,
       scaleWidth: null,
-      scaleHeight: null
+      scaleHeight: null,
+      detial_id:'',
+      user_id: "11"
     }
   },
 
@@ -22,6 +25,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if(app.globalData.userInfo != null){
+      var uid = app.globalData.userInfo.user_id;
+      this.setData({
+        user_id: uid
+      })
+    }
+    this.setData({
+      detial_id: options.detial_id
+    })
     this.getDetails()
   },
 
@@ -77,8 +89,8 @@ Page({
   getDetails: function () {
     var that = this
     http.post(content, {
-      "detial_id": 795,
-      "user_id":13669,
+      "detial_id": that.data.detial_id,
+      "user_id": that.data.user_id,
     },
       function (res) {
         that.setData({

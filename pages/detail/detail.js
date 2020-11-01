@@ -15,7 +15,8 @@ Page({
     hideShare: false,
     user_id: "11",
     isComicCol: false,
-    shoucang: '收藏'
+    shoucang: '收藏',
+    user_id: "11"
   },
   /**
    * 生命周期函数--监听页面加载
@@ -103,7 +104,6 @@ Page({
             shoucang: '已收藏'
           })
         }
-        
       },
       function (err) {
         wx.showToast({
@@ -154,8 +154,10 @@ Page({
   },
   // 跳转对应集数
   bindViewNum:function(row){
+    const rows = row.currentTarget.dataset.id
+    console.info('跳转对应集数',rows.detial_id)
     wx.navigateTo({
-      url: '../cartoondeatil/cartoondeatil'
+      url: '../cartoondeatil/cartoondeatil?detial_id=' + rows.detial_id
     })
   },
   clickZank: function(){
