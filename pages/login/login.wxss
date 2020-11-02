@@ -45,10 +45,15 @@ page{
   height: 100%;
   width: 300rpx;
   color: white;
+  line-height: 76rpx;
   background-color: #2E2E2E;
 }
 .box-content-register{
   height: 100%;
+  width: 300rpx;
+  border:2rpx solid #eeeeee;
+  text-align: center;
+  line-height: 76rpx;
 }
 
 

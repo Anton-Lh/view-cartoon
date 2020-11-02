@@ -177,6 +177,11 @@ Page({
           icon: 'none'
         })
       })
+    }else {
+      wx.showToast({
+        title: '请登录后操作',
+        icon: 'none'
+      })
     }
   },
   // 表单框内容
