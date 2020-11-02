@@ -1,7 +1,7 @@
 // pages/detai/detail.js
 var app = getApp();
 var http = require('../../utils/request');
-import { cartoonDetails, comment, addComment } from '../../utils/api'
+import { cartoonDetails, comment, addComment,collect } from '../../utils/api'
 Page({
   data: {
     objectArray: [],
@@ -91,14 +91,15 @@ Page({
       "user_id": that.data.user_id,
     },
       function (res) {
-        console.log(res.message)
+        // console.log('成光的',res.message.is_ComicCol)
         that.setData({
           objectArray: res.message.comicDetialsList,
           coverPic: res.message.cover_pic,
           comicTitle: res.message.comic_title,
-          updateNum: res.message.update_num
+          updateNum: res.message.update_num,
+          isComicCol: res.message.is_ComicCol
         })
-        if(that.data.user_id != 11 && res.message.is_ComicCol){
+        if(that.data.user_id != 11 ){
           that.setData({
             isComicCol: res.message.is_ComicCol,
             shoucang: '已收藏'
@@ -125,7 +126,6 @@ Page({
         that.setData({
           commentList: res.message,
         })
-
       },
       function (err) {
         wx.showToast({
@@ -162,7 +162,21 @@ Page({
   },
   clickZank: function(){
     if(app.globalData.userInfo != null){
-      
+      console.info('点击了收藏')
+      var that = this
+      http.post(collect, {
+        "comic_id": that.data.comic_id,
+        "user_id": that.data.user_id
+      },
+      function (res) {
+        that.getDetails()
+      },
+      function (err) {
+        wx.showToast({
+          title: '收藏失败，请重新登录',
+          icon: 'none'
+        })
+      })
     }
   },
   // 表单框内容

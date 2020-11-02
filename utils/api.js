@@ -22,6 +22,8 @@ const collection = '/comicCol/getComicColByUserid';
 const addTuCao = '/tucao/addTucao';
 //搜素漫画
 const search = '/search/getComicBySearch';
+// 收藏
+const collect = '/comicCol/comicCollection';
 
 module.exports={
   login,
@@ -35,5 +37,6 @@ module.exports={
   addComment,
   collection,
   addTuCao,
-  search
+  search,
+  collect
 }

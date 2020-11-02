@@ -2,7 +2,9 @@
  <view class='detail_banner' style='background:url({{coverPic}})'>
   <view class='banner_content'>
     <text class='banner_title'>{{comicTitle}} <text>{{updateNum}}话</text></text>
-    <view class="{{isComicCol == true ? 'banner_zank_false' : 'banner_zank'}}">
+    <view
+    bindtap="clickZank"
+    class="{{isComicCol == true ? 'banner_zank_false' : 'banner_zank'}}">
       {{isComicCol?'已收藏':'收藏'}}</view>
   </view>
  </view>
