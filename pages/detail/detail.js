@@ -13,10 +13,9 @@ Page({
     //  文本框
     height: 20,
     hideShare: false,
-    user_id: "11",
+    user_id: "1",
     isComicCol: false,
-    shoucang: '收藏',
-    user_id: "11"
+    shoucang: '收藏'
   },
   /**
    * 生命周期函数--监听页面加载
