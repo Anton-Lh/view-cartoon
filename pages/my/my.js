@@ -13,6 +13,7 @@ Page({
     headImg: '../icon/timg.jpg',
     status: false,
     hideShare: false,
+    user_id: ""
   },
 
   /**
@@ -49,14 +50,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**
@@ -66,32 +67,21 @@ Page({
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
   clickStatus: function(){
     if(!this.data.status){
       wx.navigateTo({
         url: '../login/login'
       })
     }else{
-      app.globalData.userInfo == null;
+      
+      getApp().globalData.userInfo = null;
       wx.reLaunch({
         url: '../home/home'
       })
     }
   },
   clickTucao: function(){
+    console.log(app.globalData.userInfo)
     if(app.globalData.userInfo == null){
       wx.showToast({
         title: '吐槽前请登录！',
@@ -104,7 +94,6 @@ Page({
     }else{
       //进入吐槽界面
       this.setData({ hideShare: true })
-      console.info('吐槽兄弟团')
     }
   },
   // 关闭遮罩
@@ -120,7 +109,6 @@ Page({
         icon: 'none'
       })
     }else{
-      console.info('sadasd',e.detail.value.textarea)
       http.post(addTuCao, {
         "tucao_info": e.detail.value.textarea,
         "user_id": that.data.user_id,
