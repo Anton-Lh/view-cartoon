@@ -10,6 +10,7 @@
   height: 250px;
   width: 100%;
   position: relative;
+  background-size: 100% !important;
 }
 /* .no-login{
   display: flex;

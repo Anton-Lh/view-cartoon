@@ -137,5 +137,12 @@ Page({
   clickMore: function(){
     
     this.loadingMore()
-  }
+  },
+    // 跳转对应收藏集
+    bindViewFile:function(row){
+      const rows = row.currentTarget.dataset.id
+      wx.navigateTo({
+        url: '../detail/detail?comic_id=' + rows.comic_id
+      })
+    },
 })

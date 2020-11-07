@@ -46,6 +46,9 @@ page{
   margin-top: 16rpx;
   margin-left: 22rpx;
 }
+.main-file {
+  height: 100%;
+}
 .load-data{
   width: 100%;
   height: 35px;

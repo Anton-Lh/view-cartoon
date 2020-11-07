@@ -29,6 +29,9 @@ page{
   display: flex;
   align-items: center;
 }
+.imageSty {
+  width: 100%;
+}
 .search-box-input{
   margin-left: 30rpx;
   font-size: 36rpx;

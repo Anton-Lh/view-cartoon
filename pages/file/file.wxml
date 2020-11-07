@@ -4,9 +4,12 @@
   <button class="no-login-button" bindtap="clickLogin">登录</button>
 </view>
 <view class="main" id="main" style="width:{{mainWidth}}px;padding-left:{{mainPadding}}px;padding-right:{{mainPadding}}px;">
-  <view class="main-box" style="width:{{mainBoxWidth}}px;margin-left:{{marginLF}}px;margin-right:{{marginLF}}px" wx:for="{{dataArr}}" wx:key="index" wx:for-item="item">
-    <image class="main-box-image" src="{{item.cover_pic}}"  mode="aspectFill"></image>
-    <text class="main-box-text">共{{item.update_num}}话</text>
+  <view class="main-box" style="width:{{mainBoxWidth}}px;margin-left:{{marginLF}}px;margin-right:{{marginLF}}px" wx:for="{{dataArr}}" wx:key="index" wx:for-item="items">
+  <view bindtap="bindViewFile" data-id="{{items}}" class="main-file">
+    <image class="main-box-image" src="{{items.cover_pic}}"  mode="aspectFill"></image>
+    <text class="main-box-text">共{{items.update_num}}话</text>
+  </view>
+   
   </view>
 </view>
 <view class="load-data" style="display:{{moreDisplay}}" bindtap="clickMore">点击或上拉加载更多</view>
