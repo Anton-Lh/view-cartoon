@@ -12,7 +12,8 @@ Page({
     marginLF: 0, 
     mainPadding: 0, //dom的padding
     dataArr: [],
-    searchValue: ''
+    searchValue: '',
+    user_id: "11"
   },
 
   /**
@@ -20,8 +21,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    app.globalData.userInfo = {"user_id":"13667"} //测试代码,上线时删除
-    if(app.globalData.userInfo != null){
       wx.getSystemInfo({
         success: (result) => {
           let sw = result.screenWidth - 30;
@@ -36,7 +35,11 @@ Page({
           }) 
         },
       })
-    }
+      if(app.globalData.userInfo != null){
+        that.setData({
+          user_id: app.globalData.userInfo.user_id
+        })
+      }
   },
 
   /**
@@ -89,28 +92,32 @@ Page({
   },
   getSearch: function(value){
     var that = this;
-    http.post(search,{
-      "search_info": value, //搜索内容
-      "user_id": "11"
-      },
-      function(res){
-        console.log(res)
-        if(res.message.length != 0){
-          that.setData({
-            dataArr: res.message
+    if(value){
+      http.post(search,{
+        "search_info": value, //搜索内容
+        "user_id": that.data.user_id
+        },
+        function(res){
+          if(res.message.length != 0){
+            that.setData({
+              dataArr: res.message
+            })
+          }
+        },
+        function(err){
+          wx.showToast({
+            title: '请求失败',
+            duration: 3000,
+            image:'../icon/fail.png'
           })
-          
         }
-        
-      },
-      function(err){
-        wx.showToast({
-          title: '请求失败',
-          duration: 3000,
-          image:'../icon/fail.png'
-        })
-      }
-    )
+      )
+    }else{
+      that.setData({
+        dataArr: []
+      })
+    } 
+    
   },
   clickSearch: function(){
     this.getSearch(this.data.searchValue)
@@ -120,4 +127,10 @@ Page({
       searchValue: e.detail.value
     })
   },
+  clickResult: function(row){
+    const rows = row.currentTarget.dataset.id
+      wx.navigateTo({
+        url: '../detail/detail?comic_id=' + rows.search_id
+      })
+  }
 })

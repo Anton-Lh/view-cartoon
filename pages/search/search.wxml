@@ -8,7 +8,8 @@
   </view>
   <view class="show">
     <view class="main" id="main" style="width:{{mainWidth}}px;padding-left:{{mainPadding}}px;padding-right:{{mainPadding}}px;">
-      <view class="main-box" style="width:{{mainBoxWidth}}px;margin-left:{{marginLF}}px;margin-right:{{marginLF}}px" wx:for="{{dataArr}}" wx:key="index" wx:for-item="item">
+      <view class="main-box" style="width:{{mainBoxWidth}}px;margin-left:{{marginLF}}px;margin-right:{{marginLF}}px" wx:for="{{dataArr}}" wx:key="index" wx:for-item="item" 
+      bindtap="clickResult" data-id="{{item}}">
         <image class="main-box-image" src="{{item.search_pic}}"  mode="aspectFill"></image>
         <text class="main-box-text">{{item.search_info}}</text>
       </view>

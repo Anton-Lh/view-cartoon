@@ -22,7 +22,8 @@ Page({
     leftHight: 0,
     rightHight: 0,
     beforeColor: "white",
-    afterColor: "coral"
+    afterColor: "coral",
+    user_id: "11"
   },
   // 跳转详情页
   bindViewTap: function (row) {
@@ -64,6 +65,7 @@ Page({
     var that = this;
     if(app.globalData.userInfo != null){
       that.setData({
+        user_id: app.globalData.userInfo.user_id,
         headImg: app.globalData.userInfo.user_headimg
       })
     }
@@ -118,9 +120,9 @@ Page({
   getCartoon: function(){
     var that = this
     http.post(getAllCartoon,{
-      "pageNum":this.data.pageNum,
-      "pageSize":this.data.pageSize,
-      "user_id":"11"
+      "pageNum":that.data.pageNum,
+      "pageSize":that.data.pageSize,
+      "user_id":that.data.user_id
     },
       function(res){
         var cartoonAll = that.data.noramalData;

@@ -22,7 +22,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    //app.globalData.userInfo = {"user_id":"13667"} //测试代码,上线时删除
     if(app.globalData.userInfo != null){
       wx.getSystemInfo({
         success: (result) => {
@@ -60,6 +59,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(app.globalData.userInfo != null){
+      this.getCollection();
+    }
   },
   /**
    * 生命周期函数--监听页面卸载
