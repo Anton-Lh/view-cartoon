@@ -1,4 +1,8 @@
-<view class="search-top">
+<view wx:if="{{version == '0'}}" style="width:100%;height:800px">
+  <image style="width:100%;height:100%;" src="http://ubearcomic.uvogin.xyz/1599274755879"></image>
+</view>
+<view wx:else>
+  <view class="search-top">
   <image class="head-img" src="{{headImg}}"></image>
   <view class="search-right">
     <view class="search-box" bindtap="entrySearch">
@@ -29,4 +33,5 @@
       <text class="cartoon-count">共{{item.update_num}}话</text>
     </view>
   </block>
+</view>
 </view>

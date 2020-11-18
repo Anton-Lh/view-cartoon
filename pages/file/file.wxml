@@ -1,6 +1,6 @@
 <view class="no-login" style="display:{{noLoginDisply}}">
   <image class="no-login-image" src="../icon/tip.png"></image>
-  <text class="no-login-font">收藏功能需要登录后才能使用哦</text>
+  <text class="no-login-font">需要登录噢</text>
   <button class="no-login-button" bindtap="clickLogin">登录</button>
 </view>
 <view class="main" id="main" style="width:{{mainWidth}}px;padding-left:{{mainPadding}}px;padding-right:{{mainPadding}}px;">

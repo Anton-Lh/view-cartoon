@@ -23,7 +23,8 @@ Page({
     rightHight: 0,
     beforeColor: "white",
     afterColor: "coral",
-    user_id: "11"
+    user_id: "11",
+    version: '0'
   },
   // 跳转详情页
   bindViewTap: function (row) {
@@ -37,6 +38,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    if(that.data.version == '0'){
+      return;
+    }
     //获取滚动栏
     http.post(banner,{},
         function(res){
@@ -104,6 +108,9 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
+    if(that.data.version == 0){
+      return;
+    }
     var pagenum = that.data.pageNum + 1;
     that.setData({
       pageNum:pagenum
